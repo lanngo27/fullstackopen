@@ -53,7 +53,7 @@ blogRouter.put('/:id', async (request, response) => {
       likes: body.likes
     },
     { new: true, runValidators: true, context: 'query' }
-  )
+  ).populate('user')
 
   response.json(updatedBlog)
 })
